@@ -1,35 +1,45 @@
 "use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Github, Linkedin, Instagram, Mail, Youtube, ArrowRight, ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import {
+  Github,
+  Linkedin,
+  Instagram,
+  Mail,
+  YoutubeIcon,
+  ArrowRight,
+  ExternalLink,
+  Music2,
+  FacebookIcon,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 const techSkills = [
-  { name: 'JavaScript/TypeScript', level: 90 },
-  { name: 'React/Next.js', level: 85 },
-  { name: 'Node.js', level: 80 },
+  { name: "JavaScript/TypeScript", level: 90 },
+  { name: "React/Next.js", level: 85 },
+  { name: "Node.js", level: 80 },
 ];
 
 const musicSkills = [
-  { name: 'Piano', level: 95 },
-  { name: 'Music Production', level: 85 },
-  { name: 'Sound Design', level: 80 },
+  { name: "Piano", level: 95 },
+  { name: "Music Production", level: 85 },
+  { name: "Sound Design", level: 80 },
 ];
 
 const images = [
   {
     src: "https://images.unsplash.com/photo-1519419166318-4f5c601b8e96?q=80&w=2670&auto=format&fit=crop",
     alt: "Studio Setup",
-    span: "col-span-2"
+    span: "col-span-2",
   },
   {
     src: "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?q=80&w=2670&auto=format&fit=crop",
     alt: "Coding Setup",
-    span: "row-span-2"
+    span: "row-span-2",
   },
 ];
 
@@ -39,20 +49,27 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
-        <Image
-            src="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2660&auto=format&fit=crop"
-            alt="Green Nature Background"
-            fill
-            className="object-cover"
-            priority
-          />
-          
-          <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
+          <motion.div
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="h-full w-full"
+          >
+            <Image
+              src={"/images/UOP.jpg"}
+              alt="Green Nature Background"
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
+
+          <div className="absolute inset-0 bg-background/40 backdrop-blur-none" />
         </div>
 
         <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <motion.div 
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-24 items-center ">
+            <motion.div
               className="md:col-span-3 flex justify-center md:justify-start"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -60,7 +77,9 @@ export default function Home() {
             >
               <div className="relative w-48 h-48 md:w-64 md:h-64">
                 <Image
-                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2670&auto=format&fit=crop"
+                  src={
+                    "https://media.licdn.com/dms/image/v2/D4D03AQHHb8wUZglGvA/profile-displayphoto-shrink_400_400/B4DZS2QhkKG4Ak-/0/1738224573896?e=1749686400&v=beta&t=NcKiHndyXO_osk5zAtf5vrD72fXUmG6eJ2q13EQbvWs"
+                  }
                   alt="Profile"
                   fill
                   className="rounded-full object-cover shadow-2xl ring-4 ring-primary/20"
@@ -69,7 +88,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="md:col-span-5 text-center md:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -78,7 +97,7 @@ export default function Home() {
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
                 Crafting Code &
                 <br />
-                Creating Music
+                Enjoying Music
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-6">
                 Where technology meets creativity
@@ -95,7 +114,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="md:col-span-4 space-y-6"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -106,16 +125,33 @@ export default function Home() {
                 <p className="text-muted-foreground mb-4">
                   IT Professional | Musician
                   <br />
-                  <a href="mailto:contact@orson.dev" className="hover:text-primary">
-                    contact@orson.dev
+                  <a
+                    href="mailto:mgayashan83@gmail.com"
+                    className="hover:text-primary"
+                  >
+                    mgayashan83@gmail.com
                   </a>
                 </p>
                 <div className="flex gap-4">
                   {[
-                    { icon: Github, href: 'https://github.com' },
-                    { icon: Linkedin, href: 'https://linkedin.com' },
-                    { icon: Instagram, href: 'https://instagram.com' },
-                    { icon: Youtube, href: 'https://youtube.com' }
+                    { icon: Github, href: "https://github.com/kgayashan-dev" },
+                    {
+                      icon: Linkedin,
+                      href: "https://www.linkedin.com/in/gayashanm/",
+                    },
+                    { icon: Instagram, href: "https://instagram.com" },
+                    {
+                      icon: YoutubeIcon,
+                      href: "https://www.youtube.com/@orsoninsp",
+                    },
+                    {
+                      icon: Music2,
+                      href: "https://www.tiktok.com/@orson_gayashan",
+                    },
+                    {
+                      icon: FacebookIcon,
+                      href: "https://m.facebook.com/orson.gayashan/",
+                    },
                   ].map((social, index) => (
                     <motion.a
                       key={social.href}
@@ -150,10 +186,13 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">Software Engineering</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    Software Engineering
+                  </h3>
                   <p className="text-muted-foreground mb-4">
-                    With over 5 years of experience in software development, I specialize in
-                    building scalable web applications using modern technologies.
+                    With over 5 years of experience in software development, I
+                    specialize in building scalable web applications using
+                    modern technologies.
                   </p>
                   <Link href="/about">
                     <Button variant="secondary">
@@ -167,8 +206,9 @@ export default function Home() {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Music Journey</h3>
                   <p className="text-muted-foreground mb-4">
-                    As a classically trained pianist and electronic music producer, I blend
-                    traditional musical training with modern production techniques.
+                    As a classically trained pianist and electronic music
+                    producer, I blend traditional musical training with modern
+                    production techniques.
                   </p>
                   <Link href="/about">
                     <Button variant="secondary">
@@ -196,7 +236,9 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-6">Technical Skills</h3>
+                  <h3 className="text-xl font-semibold mb-6">
+                    Technical Skills
+                  </h3>
                   <div className="space-y-6">
                     {techSkills.map((skill) => (
                       <motion.div
@@ -208,7 +250,9 @@ export default function Home() {
                       >
                         <div className="flex justify-between mb-2">
                           <span className="font-medium">{skill.name}</span>
-                          <span className="text-muted-foreground">{skill.level}%</span>
+                          <span className="text-muted-foreground">
+                            {skill.level}%
+                          </span>
                         </div>
                         <Progress value={skill.level} className="h-2" />
                       </motion.div>
@@ -238,7 +282,9 @@ export default function Home() {
                       >
                         <div className="flex justify-between mb-2">
                           <span className="font-medium">{skill.name}</span>
-                          <span className="text-muted-foreground">{skill.level}%</span>
+                          <span className="text-muted-foreground">
+                            {skill.level}%
+                          </span>
                         </div>
                         <Progress value={skill.level} className="h-2" />
                       </motion.div>
@@ -315,7 +361,7 @@ export default function Home() {
                     <iframe
                       width="100%"
                       height="100%"
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      src="https://www.youtube.com/embed/SMUMn8Ppgrc"
                       title="YouTube video"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -323,10 +369,13 @@ export default function Home() {
                       className="rounded-lg"
                     />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Latest Performance</h3>
-                  <p className="text-muted-foreground">
-                    Check out my latest live performance featuring original compositions.
-                  </p>
+                  {/* <h3 className="text-xl font-semibold mb-2">
+                    Latest Performance
+                  </h3> */}
+                  {/* <p className="text-muted-foreground">
+                    Check out my latest live performance featuring original
+                    compositions.
+                  </p> */}
                 </CardContent>
               </Card>
               <Card>
@@ -335,7 +384,7 @@ export default function Home() {
                     <iframe
                       width="100%"
                       height="100%"
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      src="https://www.youtube.com/embed/byv4dsG_b90"
                       title="YouTube video"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -343,10 +392,32 @@ export default function Home() {
                       className="rounded-lg"
                     />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Tech Tutorial</h3>
-                  <p className="text-muted-foreground">
-                    Learn about the latest web development techniques and best practices.
-                  </p>
+                  {/* <h3 className="text-xl font-semibold mb-2">Tech Tutorial</h3> */}
+                  {/* <p className="text-muted-foreground">
+                    Learn about the latest web development techniques and best
+                    practices.
+                  </p> */}
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="aspect-video rounded-lg bg-muted mb-4">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/kItluY5imUA"
+                      title="YouTube video"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="rounded-lg"
+                    />
+                  </div>
+                  {/* <h3 className="text-xl font-semibold mb-2">Tech Tutorial</h3> */}
+                  {/* <p className="text-muted-foreground">
+                    Learn about the latest web development techniques and best
+                    practices.
+                  </p> */}
                 </CardContent>
               </Card>
             </div>

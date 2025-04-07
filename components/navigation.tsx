@@ -47,7 +47,8 @@ const Navigation = () => {
           <Link href="/" className="flex items-center gap-3">
             <div className="relative w-8 h-8">
               <Image
-                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2670&auto=format&fit=crop"
+                // src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2670&auto=format&fit=crop"
+                src="https://media.licdn.com/dms/image/v2/D4D03AQHHb8wUZglGvA/profile-displayphoto-shrink_100_100/B4DZS2QhkKG4AY-/0/1738224573915?e=1749686400&v=beta&t=z_EBbCmpL5se1DLEpJbakIOA_rUai_ZlQRxmCL8Lvsc"
                 alt="Profile"
                 fill
                 className="rounded-full object-cover ring-2 ring-primary/20"
