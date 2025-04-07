@@ -39,14 +39,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=2662&auto=format&fit=crop"
-            alt="Workspace"
+        <Image
+            src="https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2660&auto=format&fit=crop"
+            alt="Green Nature Background"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
         </div>
 
         <div className="relative container mx-auto px-4 h-full flex items-center">
