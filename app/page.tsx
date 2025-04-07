@@ -46,6 +46,7 @@ export default function Home() {
             className="object-cover"
             priority
           />
+          
           <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
         </div>
 
