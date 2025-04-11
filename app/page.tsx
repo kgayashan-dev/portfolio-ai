@@ -32,14 +32,29 @@ const musicSkills = [
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1519419166318-4f5c601b8e96?q=80&w=2670&auto=format&fit=crop",
+    src: "/images/gallery/1.jpg",
     alt: "Studio Setup",
     span: "col-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?q=80&w=2670&auto=format&fit=crop",
+    src: "/images/gallery/2.jpg",
     alt: "Coding Setup",
     span: "row-span-2",
+  },
+  {
+    src: "/images/gallery/3.jpg",
+    alt: "Performance",
+    span: "col-span-1",
+  },
+  {
+    src: "/images/gallery/4.jpg",
+    alt: "Workspace",
+    span: "col-span-1",
+  },
+  {
+    src: "/images/gallery/5.jpg",
+    alt: "Music Production",
+    span: "col-span-2",
   },
 ];
 
